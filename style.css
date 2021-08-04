@@ -26,13 +26,14 @@ body {
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0.5px 0.5px hsl(185, 41%, 84%);
     width: 65%;
-    height: 55vh;
+    min-height: 30vh;
     border: none;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 10%;
 }
 
 .info-container {
@@ -67,6 +68,14 @@ body {
     border-radius: 5px;
     background-color: hsl(189, 41%, 97%);
     cursor: pointer;
+}
+
+.input-container.active {
+    border: 2px solid hsl(172, 67%, 45%);
+}
+
+.input-container.error {
+    border: 2px solid red;
 }
 
 .input-container input {
@@ -112,8 +121,13 @@ body {
     color: hsl(189, 41%, 97%);
 }
 
-.btn-container button:hover { 
+.btn-container button.active {
     background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+
+}
+.btn-container button:hover { 
+    background-color: hsl(185, 41%, 84%);
     color: hsl(183, 100%, 15%);
 }
 
@@ -227,6 +241,10 @@ span {
 
     .output-amount, .output-total {
         font-size: 35px;
+    }
+
+    .output-container {
+        height: 60vh;
     }
 }
 
