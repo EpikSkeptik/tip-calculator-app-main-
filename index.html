@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="./images/logo.svg" alt="logo" >
+  </div>
+  
+  <div class="content-container">
+    <div class="info-container">
+      <div class="bill-container">
+        <label class="bill-label">Bill</label>
+        <div class="input-container">
+          <img src="./images/icon-dollar.svg" alt="$" width="15" height="20">
+          <input type="text" placeholder="0">
+        </div>
+      </div>
+
+      <div class="select-container">
+        <label>Select Tip %</label>
+        <div class="btn-container">
+          <button class="tip-5">5%</button>
+          <button class="tip-10">10%</button>
+          <button class="tip-15">15%</button>
+          <button class="tip-25">25%</button>
+          <button class="tip-50">50%</button>
+          <input type="text" placeholder="Custom">
+        </div>
+      </div>
+    
+
+      <div class="people-container">
+        <div class="people-label">
+          <label>Number of People</label> <label class="error-label">Can't be zero</label>
+        </div>
+        <div class="input-container">
+          <img src="./images/icon-person.svg" alt="people" width="15" height="20">
+          <input type="text" placeholder="0">
+        </div>
+      </div>
+    </div>
+
+    <div class="output-container">
+      <section>
+        <div class="output-label-container">
+          <label>Tip Amount</label>
+          <span>/ person</span>
+        </div>
+        <label class="output-amount">$0.00</label>
+      </section>
+ 
+      <section>
+        <div class="output-label-container">
+          <label>Total</label>
+          <span>/ person</span>
+        </div>
+        <label class="output-total">$0.00</label>
+      </section>
+      <button class="reset-btn">Reset</button> 
+    </div>
+
+  </div>  
+</div>
+
+
+
+
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jessa Mae Alcantara</a>.
+  </div>
+</body>
+</html>
