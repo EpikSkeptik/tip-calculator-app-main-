@@ -2,6 +2,22 @@
 
 This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help improve your coding skills by building realistic projects. This is my attempt.
 
+### Desktop Version:
+![image](https://user-images.githubusercontent.com/87247587/128165086-05a25e3b-3b89-4d20-89d6-1aad260e0aaa.png)
+![image](https://user-images.githubusercontent.com/87247587/128165491-ad07295c-6322-4b99-b266-52531365a24b.png)
+
+
+### Mobile Version:
+![image](https://user-images.githubusercontent.com/87247587/128165307-8a0df9ab-c6c8-41fb-bfbb-c5484e9dd7bf.png)
+![image](https://user-images.githubusercontent.com/87247587/128165373-6100d760-3dce-40a1-9ee6-917efa8ea2ad.png)
+
+### Handling Division by 0
+![image](https://user-images.githubusercontent.com/87247587/128165618-33d8de90-6cc8-46ed-a76c-eb2be33c63b9.png)
+
+
+## See it live:
+https://upbeat-khorana-017d6e.netlify.app
+
 ## Table of contents
 
 - [Overview](#overview)
