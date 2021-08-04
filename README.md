@@ -3,7 +3,7 @@
 This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help improve your coding skills by building realistic projects. This is my attempt.
 
 ## See it live:
-https://upbeat-khorana-017d6e.netlify.app
+https://peaceful-edison-36dfe7.netlify.app/
 
 ### Desktop Version:
 <img src="https://user-images.githubusercontent.com/87247587/128165086-05a25e3b-3b89-4d20-89d6-1aad260e0aaa.png" alt="drawing" width="400"/>
