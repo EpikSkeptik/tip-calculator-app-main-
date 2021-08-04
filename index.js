@@ -15,7 +15,7 @@ const bill = inputs[0];
 const people = inputs[1];
 
 // Declare Vars for Calculation
-let billAmount, numOfPeople, tipPercent, tipAmount, totAmount = 0;
+let billAmount = 0, numOfPeople = 0, tipPercent = 0, tipAmount = 0, totAmount = 0;
 
 
 // Handling Active Inputs for Bill and Num of People
@@ -31,59 +31,23 @@ inputs.forEach((input) => {
     });
 });
 
+
 // Handling Selector Btns
 selectBtns.forEach((selBtn) => {
     selBtn.addEventListener('click', (e) => {
-        switch (selBtn.className) {
-            case 'tip-5':
-                tipPercent = 1.05;
-                selBtn.classList.add('active');
-                selectBtns[1].classList.remove('active');
-                selectBtns[2].classList.remove('active');
-                selectBtns[3].classList.remove('active');
-                selectBtns[4].classList.remove('active');
-                customBtn.blur();
-                break;
-            case 'tip-10':
-                tipPercent = 1.10;
-                selBtn.classList.add('active');
-                selectBtns[0].classList.remove('active');
-                selectBtns[2].classList.remove('active');
-                selectBtns[3].classList.remove('active');
-                selectBtns[4].classList.remove('active');
-                customBtn.blur();
-                break;
-            case 'tip-15':
-                tipPercent = 1.15;
-                selBtn.classList.add('active');
-                selectBtns[0].classList.remove('active');
-                selectBtns[1].classList.remove('active');
-                selectBtns[3].classList.remove('active');
-                selectBtns[4].classList.remove('active');
-                customBtn.blur();
-                break;
-            case 'tip-25':
-                tipPercent = 1.25;
-                selBtn.classList.add('active');
-                selectBtns[0].classList.remove('active');
-                selectBtns[1].classList.remove('active');
-                selectBtns[2].classList.remove('active');
-                selectBtns[4].classList.remove('active');
-                customBtn.blur();
-                break;
-            case 'tip-50':
-                tipPercent = 1.50;
-                selBtn.classList.add('active');
-                selectBtns[0].classList.remove('active');
-                selectBtns[1].classList.remove('active');
-                selectBtns[2].classList.remove('active');
-                selectBtns[3].classList.remove('active');
-                customBtn.blur();
-                break;
-            default:
-                break;
-        }
+        tipPercent = parseFloat(e.target.value, 10);
+        e.target.classList.add('active');
+        customBtn.blur();
 
+        selectBtns.forEach(btn => {
+            if (btn.value !== e.target.value) {
+                btn.classList.remove('active');
+            }
+        });
+
+        if (!zeroNumPeopleCheck(numOfPeople)) {
+            calculate();
+        } 
     });
 });
 
@@ -93,10 +57,13 @@ customBtn.addEventListener('click', () => {
     selectBtns.forEach((selBtn) => {
         selBtn.classList.remove('active');
     });
+    if (!zeroNumPeopleCheck(numOfPeople)) {
+        calculate();
+    } 
 });
 
 // Get Custom Tip Input
-customBtn.addEventListener('keyup', () => {
+customBtn.addEventListener('change', () => {
     tipPercent = 1 + parseInt(customBtn.value)/100;
 });
 
@@ -119,12 +86,16 @@ const zeroNumPeopleCheck = (comparator) => {
 
 
 // Get bill input
-billField.addEventListener('keyup', () => {    
+billField.addEventListener('change', () => {    
     billAmount = parseFloat(billField.value);
+    
+    if (!zeroNumPeopleCheck(numOfPeople)) {
+        calculate();
+    } 
 });
 
 // Get people input
-peopleField.addEventListener('keyup', () => {
+peopleField.addEventListener('change', () => {
     let peopleInput = parseInt(peopleField.value);
     
     if (!zeroNumPeopleCheck(peopleInput)){
@@ -137,8 +108,14 @@ const calculate = () => {
     tipAmount = math.round((billAmount * (tipPercent - 1))/numOfPeople, 2).toFixed(2);
     totAmount = math.round((billAmount * tipPercent)/numOfPeople , 2).toFixed(2);
 
-    tipLabel.textContent = `$${tipAmount}`;
-    totalLabel.textContent = `$${totAmount}`;
+    if (!isNaN(tipAmount)) {
+        tipLabel.textContent = `$${tipAmount}`;
+        totalLabel.textContent = `$${totAmount}`;
+    }
+    else {
+        tipLabel.textContent = "$0.00";
+        totalLabel.textContent = "$0.00";
+    }
 }
 
 
@@ -165,10 +142,11 @@ resetBtn.addEventListener('click', () => {
     selectBtns.forEach((selBtn) => {
         selBtn.classList.remove('active');
     });
+    customBtn.value = "";
     customBtn.blur();
-    totAmount.textContent = "";
-    tipAmount.textContent = "";
 
     // Reset all calc values
-    billAmount, numOfPeople, tipPercent, tipAmount, totAmount = 0;
+    billAmount = 0, numOfPeople = 0, tipPercent = 0, tipAmount = 0, totAmount = 0;
+    totalLabel.textContent =  `$${totAmount.toFixed(2)}`;
+    tipLabel.textContent = `$${tipAmount.toFixed(2)}`;
 });
