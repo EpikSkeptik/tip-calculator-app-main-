@@ -8,8 +8,8 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 
 ### Mobile Version:
-<img src="https://user-images.githubusercontent.com/87247587/128165307-8a0df9ab-c6c8-41fb-bfbb-c5484e9dd7bf.png" alt="drawing" height="300" width="100"/>
-<img src="https://user-images.githubusercontent.com/87247587/128165373-6100d760-3dce-40a1-9ee6-917efa8ea2ad.png" alt="drawing" height="300" width="100"/>
+<img src="https://user-images.githubusercontent.com/87247587/128165307-8a0df9ab-c6c8-41fb-bfbb-c5484e9dd7bf.png" alt="drawing" height="250" width="100"/>
+<img src="https://user-images.githubusercontent.com/87247587/128165373-6100d760-3dce-40a1-9ee6-917efa8ea2ad.png" alt="drawing" height="250" width="100"/>
 
 ### Handling Division by 0
 ![image](https://user-images.githubusercontent.com/87247587/128165618-33d8de90-6cc8-46ed-a76c-eb2be33c63b9.png)
